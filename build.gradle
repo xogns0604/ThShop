@@ -1,0 +1,48 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.6'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.JPA'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {//롬복, DATAJPA, thymeleaf, Springsecurity5, h2DB, p6spy, devtools
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	//p6spy : Query문의 데이터를 볼수있는 라이브러리
+	implementation('com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.1')
+
+	//서버 재시작없이 파일변경감지해주는 라이브러리
+	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	//검증 라이브러리(Controller->DTO?)
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	//Gson
+	implementation("com.google.code.gson:gson")
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

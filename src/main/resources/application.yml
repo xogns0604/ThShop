@@ -1,0 +1,30 @@
+server:
+  port: 8087
+
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password: 1
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create #none
+    properties:
+      hibernate:
+#        show_sql: true  모든 로그는 로그파일에 해야함! sout으로 하지말고
+        format_sql: true
+        default_batch_fetch_size: 100
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 2000
+        one-indexed-parameters: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+#    org.hibernate.type: trace
+
