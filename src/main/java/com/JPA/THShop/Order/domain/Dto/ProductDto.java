@@ -1,6 +1,6 @@
-package com.JPA.THShop.Shop.domain.Dto;
+package com.JPA.THShop.Order.domain.Dto;
 
-import com.JPA.THShop.Shop.domain.Product;
+import com.JPA.THShop.Order.domain.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

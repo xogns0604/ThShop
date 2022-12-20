@@ -1,8 +1,8 @@
-package com.JPA.THShop.Shop.service;
+package com.JPA.THShop.Order.service;
 
-import com.JPA.THShop.Shop.domain.Product;
-import com.JPA.THShop.Shop.domain.Dto.ProductDto;
-import com.JPA.THShop.Shop.repository.ProductRepository;
+import com.JPA.THShop.Order.domain.Product;
+import com.JPA.THShop.Order.domain.Dto.ProductDto;
+import com.JPA.THShop.Order.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

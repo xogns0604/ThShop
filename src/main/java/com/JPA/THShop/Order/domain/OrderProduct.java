@@ -1,10 +1,9 @@
-package com.JPA.THShop.Shop.domain;
+package com.JPA.THShop.Order.domain;
 
 import com.JPA.THShop.common.entity.BaseTime;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.query.criteria.internal.OrderImpl;
 
 import javax.persistence.*;
 

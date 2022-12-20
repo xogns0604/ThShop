@@ -1,11 +1,15 @@
 package com.JPA.THShop.member.domain;
+import com.JPA.THShop.Order.domain.Cart;
 import com.JPA.THShop.common.entity.BaseTime;
-import com.JPA.THShop.Shop.domain.Order;
+import com.JPA.THShop.Order.domain.Order;
+import com.JPA.THShop.exception.NotEnoughPointException;
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import static javax.persistence.FetchType.*;
 
 
 @Entity @Getter
@@ -31,6 +35,10 @@ public class Member extends BaseTime {
     @OneToMany(mappedBy = "member") //@JsonIgnore
     private List<Order> orders = new ArrayList<>();
 
+    @OneToOne(mappedBy = "member", fetch = LAZY)
+    private Cart cart;
+
+    //테스트용 생성자
     public Member(String userId, String pwd, String name, String email) {
         this.userId = userId;
         this.pwd = pwd;
@@ -38,21 +46,13 @@ public class Member extends BaseTime {
         this.email = email;
 
         this.status = MemberStatus.generalMem;
-        this.holdings = 0;
-        this.point = 0;
-    }
-
-    public Member(String userId, String pwd, String name) {
-        this.userId = userId;
-        this.pwd = pwd;
-        this.name = name;
+        this.holdings = 100000;
+        this.point = 1000;
     }
 
     public void editInfo(String pwd){
         this.pwd = pwd;
     }
-
-    //==연관관계 매서드==//
 
     @Override
     public String toString() {
@@ -67,6 +67,27 @@ public class Member extends BaseTime {
                 ", status=" + status +
                 '}';
     }
+
+    //==연관관계 매서드==//
+
+
+
+    //==생성==//
+
+
+    //==비즈니스로직==//
+    public void plusPoint(int point) {
+        this.point += point;
+    }
+
+    public void minusPoint(int point) {
+        if (this.point - point < 0) {
+            throw new NotEnoughPointException("Request more points than you have");
+        } else {
+            this.point -= point;
+        }
+    }
+
 }
 //    public void update(String userPwd, String userName, int age, String email, MemberStatus status) {
 //        this.pwd = userPwd;

@@ -1,14 +1,13 @@
-package com.JPA.THShop.Shop.controller;
+package com.JPA.THShop.Order.controller;
 
-import com.JPA.THShop.Shop.domain.Dto.ProductDto;
-import com.JPA.THShop.Shop.service.ProductService;
+import com.JPA.THShop.Order.domain.Dto.ProductDto;
+import com.JPA.THShop.Order.service.ProductService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 
 
 @RestController

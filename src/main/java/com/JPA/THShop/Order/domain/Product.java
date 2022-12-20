@@ -1,9 +1,8 @@
-package com.JPA.THShop.Shop.domain;
+package com.JPA.THShop.Order.domain;
 
-import com.JPA.THShop.Shop.domain.Dto.ProductDto;
+import com.JPA.THShop.Order.domain.Dto.ProductDto;
 import com.JPA.THShop.common.entity.BaseTime;
 import com.JPA.THShop.exception.NotEnoughStockException;
-import com.JPA.THShop.member.domain.Member;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

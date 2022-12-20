@@ -1,12 +1,10 @@
-package com.JPA.THShop.Shop.domain.Dto;
+package com.JPA.THShop.Order.domain.Dto;
 
-import com.JPA.THShop.Shop.domain.Order;
-import com.JPA.THShop.Shop.domain.OrderProduct;
-import com.JPA.THShop.Shop.domain.OrderStatus;
-import com.JPA.THShop.member.domain.Member;
+import com.JPA.THShop.Order.domain.Order;
+import com.JPA.THShop.Order.domain.OrderProduct;
+import com.JPA.THShop.Order.domain.enums.OrderStatus;
 import lombok.*;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 

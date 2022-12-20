@@ -1,16 +1,12 @@
-package com.JPA.THShop.Shop.service;
+package com.JPA.THShop.Order.service;
 
-import com.JPA.THShop.Shop.domain.Product;
-import com.JPA.THShop.Shop.domain.Dto.ProductDto;
-import com.JPA.THShop.Shop.repository.ProductRepository;
+import com.JPA.THShop.Order.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
-
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
